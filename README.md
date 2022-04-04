@@ -1,4 +1,4 @@
-command: 
+command: \n
 to encrypt a file:
 python3 sdes.py -e <10-bit key> <plaintextfile> <ciphertextfile>
 eq: python3 sdes.py -e 1010001110 plain.docx cipher.out
