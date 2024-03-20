@@ -195,21 +195,26 @@ def shellarg():
         if len(key) != 10:
             print("only 10-bits key are accepted here...")
         else:
-            s = {'0', '1'}
+            valid = True
             for item in key:
                 if item not in {'0','1'}:
-                    print("only 10-bits binary are appected here...")
-                else:
-                    write_bytes(dest, main(src,enc,key))
+                    print("only 10-bits binary are accepted here...")
+                    valid = False
+                    break
+            if valid:
+                write_bytes(dest, main(src,enc,key))
     elif a == "-d":
         if len(key) != 10:
             print("only 10-bits key are accepted here...")
         else:
+            valid = True
             for item in key:
                 if item not in {'0','1'}:
-                    print("only 10-bits binary are appected here...")
-                else:
-                    write_bytes(dest, main(src,dec,key))
+                    print("only 10-bits binary are accepted here...")
+                    valid = False
+                    break
+            if valid:
+                write_bytes(dest, main(src,dec,key))
         
     else:
         print("wrong syntax... pls use -e to encrypt or -d to decrypt")
