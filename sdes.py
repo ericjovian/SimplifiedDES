@@ -12,20 +12,22 @@ S1 =[["00","01","10","11"],
     ["11","00","01","10"],
     ["10","01","00","10"]]
 
+# index swapping function
+def swap(arr, indices):
+    return [arr[i] for i in indices]
+
 # permutations functions
 def p10(arr):
-    arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],arr[7],arr[8],arr[9] = arr[2],arr[4],arr[1],arr[6],arr[3],arr[9],arr[0],arr[8],arr[7],arr[5]
-    return arr
+    indices = [2, 4, 1, 6, 3, 9, 0, 8, 7, 5]
+    return swap(arr, indices)
 
 def p8(arr):
-    arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],arr[7],arr[8],arr[9] = arr[5],arr[2],arr[6],arr[3],arr[7],arr[4],arr[9],arr[8],arr[0],arr[1]
-    arr.pop()
-    arr.pop()
-    return(arr)
+    indices = [5, 2, 6, 3, 7, 4, 9, 8]
+    return swap(arr, indices)
 
 def P4(arr):
-    arr[0],arr[1],arr[2],arr[3] = arr[1],arr[3],arr[2],arr[0]
-    return(arr)
+    indices = [1, 3, 2, 0]
+    return swap(arr, indices)
 
 #left shift function
 def ls(arr, n):
